@@ -31,4 +31,5 @@ Device configuration for Xiaomi Redmi Note 9s/ 9 Pro / 9 Pro MAX / Poco M2 PRO
   ## Device picture
 
   ![Xiaomi Redmi Note 9s](https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9-pro.jpg "Xiaomi Redmi Note 9s/PRO")
+  ![Xiaomi Redmi Note 9 PRO MAX](https://fdn2.gsmarena.com/vv/bigpic/xiaomi-redmi-note-9-pro-max.jpg "Xiaomi Redmi Note 9 PRO MAX")
   ![Poco M2 PRO](https://fdn2.gsmarena.com/vv/bigpic/poco-m2-pro.jpg "Poco M2 PRO")
