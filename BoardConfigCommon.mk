@@ -235,4 +235,4 @@ BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 -include vendor/xiaomi/miuicamera/BoardConfigAnx.mk
 
 # Inherit proprietary blobs
--include vendor/xiaomi/sm6250-common/BoardConfigVendor.mk
+include vendor/xiaomi/sm6250-common/BoardConfigVendor.mk
