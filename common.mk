@@ -307,12 +307,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.xiaomi_sm6250 \
     vendor.qti.hardware.perf@2.2.vendor
 
-# RCS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
-
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc \
