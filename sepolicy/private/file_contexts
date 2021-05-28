@@ -1,0 +1,2 @@
+# Sysfs
+/sys/devices/virtual/diag/diag/wakeup[0-8]+/event_count             u:object_r:sysfs:s0
