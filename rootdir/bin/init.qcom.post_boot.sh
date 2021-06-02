@@ -203,7 +203,6 @@ function configure_memory_parameters() {
         do
             echo 1 > /sys/devices/virtual/npu/msm_npu/pwr
             echo "bw_hwmon" > $npubw/governor
-            echo 40 > $npubw/polling_interval
             echo "1144 1720 2086 2929 3879 5931 6881 8137" > $npubw/bw_hwmon/mbps_zones
             echo 4 > $npubw/bw_hwmon/sample_ms
             echo 80 > $npubw/bw_hwmon/io_percent
@@ -212,6 +211,7 @@ function configure_memory_parameters() {
             echo 30 > $npubw/bw_hwmon/down_thres
             echo 0 > $npubw/bw_hwmon/guard_band_mbps
             echo 250 > $npubw/bw_hwmon/up_scale
+            echo 40 > $npubw/polling_interval
             echo 0 > $npubw/bw_hwmon/idle_mbps
             echo 0 > /sys/devices/virtual/npu/msm_npu/pwr
         done
