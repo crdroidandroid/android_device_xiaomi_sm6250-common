@@ -194,3 +194,9 @@ on post-fs && property:ro.boot.hwname=joyeuse
 
 on post-fs && property:ro.boot.hwname=excalibur
     mount none /vendor/lib64/liboemcrypto-curtana.so /vendor/lib64/liboemcrypto.so bind
+
+# Hide Magisk
+on property:sys.boot_completed=1
+     # Restrict permissions to socket file
+     # to hide Magisk & co.
+     chmod 440 /proc/net/unix
