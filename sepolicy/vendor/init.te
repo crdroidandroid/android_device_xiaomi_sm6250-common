@@ -5,7 +5,7 @@ allow init same_process_hal_file:file execute;
 allow init adsprpcd_file:file mounton;
 
 
-allow init hwservicemanager:binder { call  transfer };
+
 
 allow init init:capability { sys_nice };
 
