@@ -1,3 +1,7 @@
+typeattribute hal_fingerprint_default data_between_core_and_vendor_violators;
+allow hal_fingerprint_default goodix_fingerprint_data_file:dir create_dir_perms;
+allow hal_fingerprint_default goodix_fingerprint_data_file:file create_file_perms;
+
 allow hal_fingerprint_default fingerprint_data_file:dir rw_dir_perms;
 allow hal_fingerprint_default fingerprint_data_file:file create_file_perms;
 
@@ -18,7 +22,6 @@ allow hal_fingerprint_default {
 
 allow hal_fingerprint_default {
   vendor_sysfs_fingerprint
-  vendor_sysfs_fps_attr
   vendor_sysfs_graphics
   sysfs_msm_subsys
 }: file rw_file_perms;
@@ -31,5 +34,4 @@ set_prop(hal_fingerprint_default, vendor_fp_prop)
 
 allow hal_fingerprint_default vendor_sysfs_spss:dir { search };
 allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
-
-allow hal_fingerprint_default default_prop:file { getattr  map  open  read };
+allow hal_fingerprint_default sysfs:file { write };
