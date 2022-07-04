@@ -51,19 +51,14 @@ volume index from 0 to 100.
         <point>66,-2200</point>
         <point>100,-1800</point>
     </volume>
-    <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_SPEAKER">
-        <point>1,-4400</point>
-        <point>57,-2400</point>
-        <point>71,-2100</point>
-        <point>85,-1900</point>
-        <point>100,-1700</point>
-    </volume>
+    <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_SPEAKER"
+            ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_EARPIECE"
-                                         ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
+            ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_EXT_MEDIA"
-                                         ref="DEFAULT_DEVICE_CATEGORY_EXT_MEDIA_VOLUME_CURVE"/>
+            ref="DEFAULT_DEVICE_CATEGORY_EXT_MEDIA_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_HEARING_AID"
-                                         ref="DEFAULT_HEARING_AID_VOLUME_CURVE"/>
+            ref="DEFAULT_HEARING_AID_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                        ref="DEFAULT_DEVICE_CATEGORY_HEADSET_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_SPEAKER">
