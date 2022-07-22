@@ -140,6 +140,13 @@ on boot
     chmod 0666 /dev/qseecom
     chmod 0644 /dev/goodix_fp
     chown system system /dev/goodix_fp
+
+# Double Tap to Wake
+    chown system system /proc/tp_gesture
+    chmod 0660 /proc/tp_gesture
+    chown system system /sys/touchpanel/double_tap
+    chmod 0660 /sys/touchpanel/double_tap
+
 #Load WLAN driver
     insmod /vendor/lib/modules/wlan.ko
 
