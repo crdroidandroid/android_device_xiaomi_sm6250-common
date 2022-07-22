@@ -17,3 +17,6 @@ allow vendor_init vendor_dirac_prop:property_service set;
 
 
 allow vendor_init persist_debug_prop:file { read };
+
+allow vendor_init thermal_link_device:dir r_dir_perms;
+allow vendor_init thermal_link_device:lnk_file r_file_perms;
