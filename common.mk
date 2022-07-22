@@ -412,6 +412,9 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.xiaomi_atoll \
     thermal_symlinks
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
+
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
