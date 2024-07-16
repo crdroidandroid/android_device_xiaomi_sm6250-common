@@ -191,6 +191,10 @@ PRODUCT_PACKAGES += \
     SM6250LineageSDK \
     SM6250LineageSettingsOverlay
 
+# Parts
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
