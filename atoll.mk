@@ -283,6 +283,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/common/libqti-perfd-client \
     hardware/xiaomi
 
+# Swiitchoff stuffs
+$(call inherit-product-if-exists, swiitchoff/stuffs/config.mk)
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
