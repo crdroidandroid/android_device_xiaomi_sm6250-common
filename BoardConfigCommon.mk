@@ -4,6 +4,7 @@
 #
 
 COMMON_PATH := device/xiaomi/sm6250-common
+KERNEL_PATH := device/xiaomi/miatoll-kernel
 
 # Architecture
 TARGET_ARCH := arm64
@@ -60,15 +61,12 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_SEPARATED_DTBO := true
 
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_RAMDISK_USE_LZ4 := true
 
 TARGET_KERNEL_ADDITIONAL_FLAGS += LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6250
 
 BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom
@@ -83,6 +81,16 @@ BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=1
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
+
+# Kernel headers
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6250
+
+# Prebuilt source kernel
+TARGET_NO_KERNEL_OVERRIDE := true
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
+BOARD_MKBOOTIMG_ARGS += --dtb $(BOARD_PREBUILT_DTBIMAGE_DIR)/cust-atoll-ab.dtb
 
 # Media
 TARGET_USES_ION := true

@@ -139,6 +139,12 @@ PRODUCT_PACKAGES += \
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 
+# Kernel Binary
+TARGET_KERNEL_DIR ?= device/xiaomi/miatoll-kernel
+LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
+
+PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
