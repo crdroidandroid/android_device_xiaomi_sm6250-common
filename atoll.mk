@@ -86,6 +86,9 @@ PRODUCT_PACKAGES += \
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
 
+PRODUCT_PACKAGES += \
+    ViPER4AndroidFX
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
