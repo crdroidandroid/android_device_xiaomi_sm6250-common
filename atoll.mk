@@ -54,6 +54,17 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
 
+ifeq ($(TARGET_INCLUDES_DOLBY),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/dolby/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/audio/dolby/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+else
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+endif
+
 ifeq ($(TARGET_INCLUDES_CUSTOM_VOLUMES),true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
@@ -93,10 +104,14 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 # Dolby
-$(call inherit-product, hardware/dolby/dolby.mk)
+ifeq ($(TARGET_INCLUDES_DOLBY),true)
+$(call inherit-product-if-exists, hardware/dolby/dolby.mk)
+endif
 
+ifeq ($(TARGET_INCLUDES_ViperFX),true)
 PRODUCT_PACKAGES += \
     ViPER4AndroidFX
+endif
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -201,8 +216,10 @@ PRODUCT_PACKAGES += \
     SM6250LineageSettingsOverlay
 
 # Parts
+ifeq ($(TARGET_INCLUDES_DolbyVision),true)
 PRODUCT_PACKAGES += \
     DVParts
+endif
 
 # Partitions
 PRODUCT_PACKAGES += \

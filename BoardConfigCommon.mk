@@ -56,7 +56,12 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     vendor/lineage/config/device_framework_matrix.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
+
+ifeq ($(TARGET_INCLUDES_DolbyVision),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/hidl/vision/c2_manifest_vendor.xml
+else
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/hidl/c2_manifest_vendor.xml
+endif
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
