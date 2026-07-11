@@ -63,13 +63,13 @@ vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/misound_res.bin
 vendor/lib/rfsa/adsp/tas25xx_TI_0.bin
 
-# Alarm
-product/app/PowerOffAlarm/PowerOffAlarm.apk
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
-vendor/bin/power_off_alarm
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+# Alarm - from Nothing Phone
+system_ext/app/PowerOffAlarm/PowerOffAlarm.apk|dd3a49d1709486320a008fdc20d7dc1c638263dc
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|7894b5b94626fe4f6beb0761dab8221295382258
+vendor/bin/power_off_alarm|4daf3facda380ea8ef31ad3b56f1d216eec4183a
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|0b5b86c7ea668197244b83dad4d686897b5e4fb4
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so|8956937951c6f99727ace3380f46275e62c932c0
 
 # Audio
 vendor/lib/btaudio_offload_if.so
@@ -1016,11 +1016,11 @@ vendor/etc/thermal-engine.conf
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalfeature.so
 
-# Time services
-vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
-vendor/etc/init/init.time_daemon.rc
-vendor/lib64/libtime_genoff.so
+# Time services - from Nothing Phone
+vendor/app/TimeService/TimeService.apk|afa1ddefbc5085d11711828834b8f8a38a346819
+vendor/bin/time_daemon|4c2a0ff6d2322c9fda64321b12bba62aa30bc385
+vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
+vendor/lib64/libtime_genoff.so|2aa4ee7b45b5ddc3c0e3731361e9bf8ce48d859a
 
 # Touchscreen firmware
 vendor/firmware/focaltech_ts_fw_huaxing.bin:recovery/root/vendor/firmware/focaltech_ts_fw_huaxing.bin
